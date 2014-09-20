@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roomie's</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/modernizr.custom.js"></script>
+  </head>
+
+  <body>
+
+    <div class="loader-container">
+      <div class="spinner">
+  		<div class="double-bounce1"></div>
+  		<div class="double-bounce2"></div>
+
+  		<div class="double-bounce3"></div>
+  		<div class="double-bounce4"></div>
+
+  		<div class="double-bounce5"></div>
+  		<div class="double-bounce6"></div>
+	  </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        	<div class="main-heading">Roomie's</div>
+        	<div class="sub-heading">Simple &bull; Organized &bull; Fair</div>
+        	<div class="header-divider"></div>
+
+			<div class="hi-icon-wrap hi-icon-effect hi-icon-effectb">
+
+				<a href="#set-3" class="hi-icon hi-icon1 blue-ring hi-icon-register" style="text-decoration:none">a</a>
+				<a href="signin.html" class="hi-icon orange-ring hi-icon1 hi-icon-signin" style="text-decoration:none">a</a>
+				<a href="#set-3" class="hi-icon green-ring hi-icon1 hi-icon-about" style="text-decoration:none">a</a>
+
+			</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+			var hash = window.location.hash,
+				current = 0,
+				demos = Array.prototype.slice.call( document.querySelectorAll( '#codrops-demos > a' ) );
+			
+			if( hash === '' ) hash = '#set-1';
+			setDemo( demos[ parseInt( hash.match(/#set-(\d+)/)[1] ) - 1 ] );
+
+			demos.forEach( function( el, i ) {
+				el.addEventListener( 'click', function() { setDemo( this ); } );
+			} );
+
+			function setDemo( el ) {
+				var idx = demos.indexOf( el );
+				if( current !== idx ) {
+					var currentDemo = demos[ current ];
+					currentDemo.className = currentDemo.className.replace(new RegExp("(^|\\s+)" + 'current-demo' + "(\\s+|$)"), ' ');
+				}
+				current = idx;
+				el.className = 'current-demo'; 
+			}
+		</script>
+    <script>
+      setTimeout(function() {
+    	$('.loader-container').slideUp();
+		}, 2000);
+    </script>
+  </body>
+</html>
